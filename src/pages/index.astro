@@ -1,0 +1,341 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  { icon: '📄', title: 'General Notarizations', desc: 'Affordable notary for everyday documents and forms.' },
+  { icon: '🏠', title: 'Real Estate Closings', desc: 'On-site signing for buyers, sellers, and refinances.' },
+  { icon: '💼', title: 'Loan Signings', desc: 'Certified loan signing agent for lenders and borrowers.' },
+  { icon: '📜', title: 'Power of Attorney', desc: 'Notarize POA documents quickly and securely.' },
+  { icon: '✍️', title: 'Affidavits', desc: 'Sworn statements notarized on demand.' },
+  { icon: '🏥', title: 'Hospital / Jail Visits', desc: 'Compassionate notary visits when you can\'t travel.' },
+];
+
+const steps = [
+  { num: '01', title: 'Call or Book Online', desc: 'Reach us by phone or our quick form. We confirm in minutes.' },
+  { num: '02', title: 'We Travel to Your Location', desc: 'Home, office, hospital, café — anywhere in Greater Cincinnati.' },
+  { num: '03', title: 'Get Your Documents Notarized', desc: 'Fast, professional, and done right the first time.' },
+];
+
+const reviews = [
+  { text: 'Fast, professional, and came right to my house in Cincinnati. Highly recommend.', name: 'Sarah M.', location: 'Hyde Park' },
+  { text: 'Needed a notary on a Sunday evening — they showed up in under an hour. Lifesaver.', name: 'James R.', location: 'Norwood' },
+  { text: 'Super easy booking and very professional. Will use again for our next closing.', name: 'Priya K.', location: 'Oakley' },
+  { text: 'Came to the hospital to notarize POA for my dad. Kind and quick. Thank you.', name: 'Michael T.', location: 'Downtown Cincinnati' },
+  { text: 'Same-day, fair price, and zero hassle. Best mobile notary in Cincinnati.', name: 'Ashley B.', location: 'Clifton' },
+];
+
+const areas = [
+  'Downtown Cincinnati','Norwood','Oakley','Hyde Park','Clifton',
+  'West Chester','Mason','Blue Ash','Mt. Lookout','Northside',
+  'Anderson Township','Loveland','Milford','Florence, KY','Covington, KY',
+];
+
+const faqs = [
+  { q: 'Do you offer same-day notary services in Cincinnati?', a: 'Yes. We offer same-day mobile notary appointments across Cincinnati, often within an hour. Just call us.' },
+  { q: 'How much does a mobile notary cost?', a: 'Our services start at $25 per notarized signature. A travel fee may apply depending on your location. Contact us for an exact quote.' },
+  { q: 'What do I need for notarization?', a: 'You\'ll need a valid, unexpired government-issued photo ID (driver\'s license, passport, or state ID) and the unsigned document you need notarized.' },
+  { q: 'Do you travel to hospitals or homes?', a: 'Yes. We make compassionate visits to hospitals, care facilities, and private residences. Just let us know your location and we\'ll come to you.' },
+  { q: 'Are you available evenings and weekends?', a: 'Absolutely — we offer 7-day-a-week service including evenings, with 24-hour notary available on request.' },
+];
+---
+<Layout title="Cincinnati Mobile Notary | Same-Day & 24 Hour Service | Notary Cincy">
+
+  <!-- Nav -->
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="nav-logo" href="/" aria-label="Notary Cincy home">
+          <img src="/images/logo.png" alt="Notary Cincy" width="140" height="70" />
+        </a>
+
+        <button class="nav-mobile-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        </button>
+
+        <nav class="nav-links" id="nav-links" aria-label="Site links">
+          <a href="#services">Services</a>
+          <a href="#how">How It Works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#book">Book</a>
+        </nav>
+
+        <div class="nav-phone">
+          <a href="tel:+15135550188" aria-label="Call (513) 555-0188">(513) 555-0188</a>
+          <a href="#book" class="btn btn-gold" style="padding:0.5rem 1.125rem;font-size:0.875rem">Book Now</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="top" class="hero" aria-labelledby="hero-heading">
+      <div class="hero-img" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 768px)" srcset="/images/hero-mobile.jpg" width="768" height="432" />
+          <img src="/images/hero.jpg" alt="" width="1440" height="810" fetchpriority="high" loading="eager" />
+        </picture>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <span class="hero-badge">
+          <span class="hero-dot" aria-hidden="true"></span>
+          Available Now in Cincinnati
+        </span>
+        <h1 id="hero-heading">Cincinnati Mobile Notary —<br />We Come to You</h1>
+        <p class="hero-tagline">Same-day appointments. Available evenings and weekends. Fast, reliable, and professional notary service across Greater Cincinnati.</p>
+        <div class="hero-cta">
+          <a href="tel:+15135550188" class="btn btn-outline">Call Now</a>
+          <a href="#book" class="btn btn-gold">Book Appointment</a>
+        </div>
+        <div class="hero-badges" aria-label="Trust indicators">
+          <span>🪪 State-Commissioned</span>
+          <span>🚗 Travel to Your Location</span>
+          <span>💼 NNA Background Screened</span>
+          <span>⭐ 5.0 Google Rating</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section-mid" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">What We Do</span>
+          <h2 class="section-title" id="services-heading">Mobile Notary Services in Cincinnati</h2>
+          <p class="section-sub">Whatever you need notarized, we handle it — at your home, office, hospital, or anywhere in the city.</p>
+        </header>
+        <div class="grid-3">
+          {services.map(s => (
+            <article class="card service-card">
+              <div class="service-icon" aria-hidden="true">{s.icon}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section section-navy" id="how" aria-labelledby="how-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">The Process</span>
+          <h2 class="section-title" id="how-heading">Three Simple Steps</h2>
+        </header>
+        <div class="steps-grid">
+          {steps.map(s => (
+            <div class="step">
+              <div class="step-num" aria-hidden="true">{s.num}</div>
+              <h3>{s.title}</h3>
+              <p>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section-light" id="reviews" aria-labelledby="reviews-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Testimonials</span>
+          <h2 class="section-title" id="reviews-heading">Trusted by Cincinnati Locals</h2>
+        </header>
+        <div class="reviews-grid">
+          {reviews.map(r => (
+            <blockquote class="card review-card">
+              <div class="stars" aria-label="5 stars">★★★★★</div>
+              <p>"{r.text}"</p>
+              <footer class="review-author">
+                <strong>{r.name}</strong>
+                <span>{r.location}</span>
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section section-mid" id="areas" aria-labelledby="areas-heading">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-label">Coverage</span>
+          <h2 class="section-title" id="areas-heading">Mobile Notary Services in Cincinnati and Surrounding Areas</h2>
+          <p class="section-sub">As Cincinnati's go-to mobile notary, we serve the entire Greater Cincinnati metro. Our traveling notary comes to your home, office, hospital, or coffee shop — whichever is easiest for you.</p>
+        </header>
+        <div class="areas-grid">
+          {areas.map(area => (
+            <span class="area-tag">{area}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section-navy" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container" style="max-width:640px">
+        <header class="section-header">
+          <span class="section-label">Pricing</span>
+          <h2 class="section-title" id="pricing-heading">Simple, Honest Pricing</h2>
+        </header>
+        <div class="pricing-card card">
+          <div class="pricing-label">MOBILE NOTARY VISITS</div>
+          <div class="pricing-amount">Starting at <span>$25</span></div>
+          <p>Per notarized signature. Travel fee may apply depending on distance.</p>
+          <a href="tel:+15135550188" class="btn btn-gold" style="margin-top:1.5rem">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-mid" id="faq" aria-labelledby="faq-heading">
+      <div class="container" style="max-width:720px">
+        <header class="section-header">
+          <span class="section-label">FAQ</span>
+          <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+        </header>
+        <div role="list">
+          {faqs.map(f => (
+            <details class="faq-item" role="listitem">
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="section section-navy" id="book" aria-labelledby="book-heading">
+      <div class="container" style="max-width:680px">
+        <header class="section-header">
+          <span class="section-label">Get Started</span>
+          <h2 class="section-title" id="book-heading">Schedule Your Notary Appointment</h2>
+          <p class="section-sub">Same-day appointments available — we typically respond within minutes.</p>
+        </header>
+        <form class="book-form" action="https://formspree.io/f/xjkwrbvl" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="(513) 555-0000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="location">Location (City / Address)</label>
+            <input type="text" id="location" name="location" required placeholder="e.g. Hyde Park, Cincinnati" />
+          </div>
+          <div class="form-group">
+            <label for="service">Document Type</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service…</option>
+              <option value="general">General Notarizations</option>
+              <option value="real-estate">Real Estate Closings</option>
+              <option value="loan">Loan Signings</option>
+              <option value="poa">Power of Attorney</option>
+              <option value="affidavit">Affidavits</option>
+              <option value="hospital">Hospital / Jail Visits</option>
+            </select>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New Notary Appointment Request — Notary Cincy" />
+          <input type="hidden" name="_next" value="https://www.notarycincy.com/thank-you" />
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:1rem;padding:0.875rem;margin-top:0.5rem">
+            Request Appointment
+          </button>
+          <p style="text-align:center;margin-top:1rem;font-size:0.875rem">
+            Or call <a href="tel:+15135550188" style="color:var(--gold);font-weight:600">(513) 555-0188</a> for immediate service.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer CTA -->
+    <section class="section section-mid footer-cta" aria-labelledby="cta-heading">
+      <div class="container" style="text-align:center">
+        <h2 class="section-title" id="cta-heading">Need a Notary in Cincinnati Today?</h2>
+        <p class="section-sub" style="margin-inline:auto;margin-top:0.75rem;margin-bottom:2rem">We're available now. Call or book — we'll be at your door fast.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+          <a href="tel:+15135550188" class="btn btn-outline">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.17 6.17l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call Now
+          </a>
+          <a href="#book" class="btn btn-gold">Book Appointment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; {new Date().getFullYear()} Notary Cincy — Mobile Notary serving Greater Cincinnati, OH &nbsp;|&nbsp; <a href="tel:+15135550188">(513) 555-0188</a></p>
+    </div>
+  </footer>
+
+</Layout>
+
+<style>
+  /* Hero */
+  .hero { position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
+  .hero-img { position: absolute; inset: 0; z-index: 0; }
+  .hero-img picture { display: contents; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom, rgba(14,24,38,0.55) 0%, rgba(26,39,68,0.35) 50%, rgba(14,24,38,0.88) 100%); }
+  .hero-content { position: relative; z-index: 2; padding-block: 6rem 4rem; max-width: 760px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.875rem; border-radius: 999px; border: 1px solid rgba(212,168,32,0.35); background: rgba(255,255,255,0.05); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .hero-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .hero-content h1 { color: var(--white); margin-bottom: 1.25rem; }
+  .hero-tagline { font-size: clamp(1rem, 2vw, 1.125rem); margin-bottom: 2rem; color: rgba(255,255,255,0.75); max-width: 560px; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 500; color: rgba(255,255,255,0.6); }
+  .hero-badges span { display: flex; align-items: center; gap: 0.375rem; }
+
+  /* Services */
+  .service-card { display: flex; flex-direction: column; gap: 0.75rem; }
+  .service-icon { font-size: 1.75rem; }
+  .service-card h3 { color: var(--white); }
+
+  /* Steps */
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+  .step { text-align: center; }
+  .step-num { font-size: 3rem; font-weight: 800; color: var(--gold); font-family: var(--font-heading); line-height: 1; margin-bottom: 1rem; opacity: 0.9; }
+  .step h3 { color: var(--white); margin-bottom: 0.5rem; }
+
+  /* Reviews */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .review-card { display: flex; flex-direction: column; gap: 0.75rem; }
+  .stars { color: var(--gold); font-size: 0.9375rem; letter-spacing: 2px; }
+  .review-card p { flex: 1; font-style: italic; font-size: 0.9375rem; }
+  .review-author { display: flex; flex-direction: column; gap: 0.125rem; padding-top: 0.75rem; border-top: 1px solid var(--border); }
+  .review-author strong { color: var(--white); font-size: 0.875rem; font-style: normal; }
+  .review-author span { font-size: 0.8125rem; color: var(--gold); }
+
+  /* Areas */
+  .areas-grid { display: flex; flex-wrap: wrap; gap: 0.625rem; justify-content: center; margin-top: 0.5rem; }
+  .area-tag { padding: 0.4rem 1rem; border: 1px solid rgba(212,168,32,0.25); border-radius: 999px; font-size: 0.875rem; color: var(--text-muted); background: rgba(255,255,255,0.03); transition: all 0.15s; }
+  .area-tag:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Pricing */
+  .pricing-card { text-align: center; padding: 2.5rem; }
+  .pricing-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .pricing-amount { font-size: 1.125rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+  .pricing-amount span { font-size: 3.5rem; font-weight: 800; color: var(--white); font-family: var(--font-heading); }
+
+  /* Book form */
+  .book-form { display: flex; flex-direction: column; gap: 1.125rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
+
+  /* Footer CTA */
+  .footer-cta { border-top: 1px solid var(--border); }
+  .footer-cta .section-sub { color: var(--text-muted); }
+</style>
