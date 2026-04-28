@@ -45,7 +45,7 @@ const faqs = [
     <nav class="nav">
       <div class="nav-inner">
         <a href="#top" class="nav-logo" aria-label="Notary Cincy">
-          <img src="/images/logo.png" alt="Notary Cincy logo" width="240" height="48" />
+          <img src="/images/logo.png" alt="Notary Cincy logo" width="192" height="96" style="height:3rem;width:auto" />
         </a>
 
         <div class="nav-links">
@@ -241,11 +241,11 @@ const faqs = [
           <p class="label">Pricing</p>
           <h2 id="pricing-heading">Simple, Honest Pricing</h2>
         </div>
-        <div class="pricing-card card" style="display:inline-block;text-align:center">
-          <p style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-fg)">Mobile Notary Visits</p>
-          <p class="pricing-amount" style="margin-top:0.75rem">Starting at <span style="color:var(--gold)">$25</span></p>
-          <p style="margin-top:1rem;font-size:0.9375rem">Per notarized signature. Travel fee may apply depending on distance.</p>
-          <a href="tel:+15135550188" class="btn btn-primary" style="margin-top:1.75rem;border-radius:999px">
+        <div class="pricing-card">
+          <p class="pricing-label">Mobile Notary Visits</p>
+          <p class="pricing-amount">Starting at <span class="pricing-price">$25</span></p>
+          <p class="pricing-note">Per notarized signature. Travel fee may apply depending on distance.</p>
+          <a href="tel:+15135550188" class="btn btn-primary pricing-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
             Get a Quote
           </a>
@@ -282,7 +282,7 @@ const faqs = [
           <h2 id="book-heading">Schedule Your Notary Appointment</h2>
           <p class="section-desc">Same-day appointments available — we typically respond within minutes.</p>
         </div>
-        <form class="card book-form" action="https://formspree.io/f/xjkwrbvl" method="POST" novalidate>
+        <form class="card book-form book-form-shadow" action="https://formspree.io/f/xjkwrbvl" method="POST" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="name">Name</label>
@@ -344,7 +344,7 @@ const faqs = [
   <footer class="site-footer">
     <div class="container footer-inner">
       <div style="display:flex;align-items:center;gap:0.5rem">
-        <img src="/images/logo.png" alt="Notary Cincy" height="28" width="auto" style="height:1.75rem;width:auto;opacity:0.8" loading="lazy" />
+        <img src="/images/logo.png" alt="Notary Cincy" width="192" height="96" style="height:1.75rem;width:auto;opacity:0.8" loading="lazy" />
       </div>
       <p>&copy; {new Date().getFullYear()} Notary Cincy — Mobile Notary serving Greater Cincinnati, OH</p>
       <a href="tel:+15135550188" style="font-weight:600;color:var(--primary)">(513) 555-0188</a>
@@ -372,8 +372,8 @@ const faqs = [
   .hero-trust { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 0; }
   .hero-trust li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.65); font-weight: 500; }
   .hero-trust li::before { content: '✓'; color: var(--gold); font-weight: 700; }
-  .hero-trust-2 { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 1.25rem; padding: 0; }
-  .hero-trust-2 li { font-size: 0.8125rem; color: rgba(255,255,255,0.55); font-weight: 500; }
+  .hero-trust-2 { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1.5rem; padding: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+  .hero-trust-2 li { font-size: 0.8125rem; color: rgba(255,255,255,0.5); font-weight: 500; }
 
   /* ── Shared section header ── */
   .section-header { text-align: center; margin-bottom: 3rem; }
@@ -408,9 +408,13 @@ const faqs = [
   .map-inner { text-align: center; }
 
   /* ── Pricing ── */
-  .pricing-card { padding: 2.5rem; border: 2px solid rgba(212,170,37,0.4); border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(30,45,74,0.1); }
-  .pricing-amount { font-family: var(--font-serif); font-size: 1.125rem; font-weight: 700; color: var(--foreground); }
-  .pricing-amount span { font-size: 3.75rem; }
+  .pricing-card { display: inline-block; text-align: center; padding: 2.5rem 3.5rem; border: 2px solid rgba(212,170,37,0.4); border-radius: 1.5rem; background: var(--card); box-shadow: 0 10px 40px rgba(30,45,74,0.12); min-width: 380px; }
+  @media (max-width: 520px) { .pricing-card { min-width: 0; width: 100%; padding: 2rem 1.5rem; } }
+  .pricing-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-fg); font-weight: 600; }
+  .pricing-amount { font-family: var(--font-serif); font-size: 3.75rem; font-weight: 700; color: var(--primary); margin-top: 0.75rem; line-height: 1.1; }
+  .pricing-price { color: var(--gold); }
+  .pricing-note { margin-top: 1rem; font-size: 0.9375rem; color: var(--muted-fg); }
+  .pricing-btn { margin-top: 1.75rem; border-radius: 999px; font-size: 0.875rem; padding: 0.75rem 1.75rem; }
 
   /* ── FAQ ── */
   .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -425,6 +429,7 @@ const faqs = [
   /* ── Book form ── */
   .book-form { padding: 1.5rem; }
   @media (min-width: 768px) { .book-form { padding: 2rem; } }
+  .book-form-shadow { box-shadow: 0 8px 40px rgba(30,45,74,0.12), 0 2px 8px rgba(30,45,74,0.06); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }

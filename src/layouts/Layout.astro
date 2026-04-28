@@ -1,4 +1,12 @@
 ---
+// Move font imports here so Vite correctly bundles font files into dist
+import '@fontsource/playfair-display/600.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -42,14 +50,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   })}</script>
 
   <style is:global>
-    @import '@fontsource/playfair-display/400.css';
-    @import '@fontsource/playfair-display/600.css';
-    @import '@fontsource/playfair-display/700.css';
-    @import '@fontsource/inter/400.css';
-    @import '@fontsource/inter/500.css';
-    @import '@fontsource/inter/600.css';
-    @import '@fontsource/inter/700.css';
-
     :root {
       /* Exact oklch values from computed styles */
       --foreground:   #17202e;   /* oklch(0.18 0.04 260) */
