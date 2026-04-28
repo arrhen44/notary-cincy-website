@@ -45,7 +45,7 @@ const faqs = [
     <nav class="nav" aria-label="Main navigation">
       <div class="container nav-inner">
         <a class="nav-logo" href="/" aria-label="Notary Cincy home">
-          <img src="/images/logo.png" alt="Notary Cincy" width="140" height="70" />
+          <img src="/images/logo.png" alt="Notary Cincy" width="120" height="60" style="height:40px;width:auto;object-fit:contain" />
         </a>
 
         <button class="nav-mobile-toggle" id="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +83,7 @@ const faqs = [
           <span class="hero-dot" aria-hidden="true"></span>
           Available Now in Cincinnati
         </span>
-        <h1 id="hero-heading">Cincinnati Mobile Notary —<br />We Come to You</h1>
+        <h1 id="hero-heading">Cincinnati Mobile Notary —<br /><span class="hero-gold">We Come to You</span></h1>
         <p class="hero-tagline">Same-day appointments. Available evenings and weekends. Fast, reliable, and professional notary service across Greater Cincinnati.</p>
         <div class="hero-cta">
           <a href="tel:+15135550188" class="btn btn-outline">Call Now</a>
@@ -294,6 +294,7 @@ const faqs = [
   .hero-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
   .hero-content h1 { color: var(--white); margin-bottom: 1.25rem; }
+  .hero-gold { color: var(--gold); }
   .hero-tagline { font-size: clamp(1rem, 2vw, 1.125rem); margin-bottom: 2rem; color: rgba(255,255,255,0.75); max-width: 560px; }
   .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
   .hero-badges { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; font-weight: 500; color: rgba(255,255,255,0.6); }
